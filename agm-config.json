@@ -1,67 +1,9 @@
 {
-  "$schema": "agm-config.schema.json",
-  "version": 1,
-  "description": "Project Context Management toolkit configuration",
-
-  "project_dirs": ["."],
-
-  "ignore_dirs": [
-    "node_modules", ".git", ".venv", "__pycache__",
-    "dist", "build", ".next", "target", ".cache"
-  ],
-
-  "harness": {
-    "preferred": "gemini",
-    "available": ["gemini", "forge", "claude", "codex", "cursor", "windsurf"]
-  },
-
-  "models": {
-    "gemini": {
-      "preferred": [
-        "gemini-3.1-flash-lite-preview",
-        "gemini-2.5-flash-lite",
-        "gemini-2.5-flash"
-      ],
-      "tiers": {
-        "primary": "gemini-2.5-flash",
-        "secondary": "gemini-2.5-flash-lite",
-        "tertiary": "gemini-3.1-flash-lite-preview"
-      }
-    },
-    "claude": {
-      "preferred": ["claude-sonnet-4", "claude-haiku-3"]
-    },
-    "forge": {
-      "preferred": ["gemini-3.1-flash-lite-preview"]
-    }
-  },
-
-  "audit": {
-    "timeout": 60,
-    "kill_after": 10,
-    "default_mode": "gemini",
-    "pass_threshold": 8,
-    "criteria_count": 10
-  },
-
-  "discover": {
-    "max_depth": 4,
-    "file_name": "AGENTS.md"
-  },
-
-  "caveman": {
-    "marker": "<!-- caveman-directive -->"
-  },
-
-  "output": {
-    "report_dir": ".",
-    "report_prefix": "agents-audit-report-",
-    "report_format": "markdown",
-    "index_file": "agents-md-index.log"
-  },
-
-  "logging": {
-    "level": "info",
-    "timestamp": true
-  }
+  "project_dirs": ["/home/luandro/Dev"],
+  "ignore_dirs": ["node_modules", ".git", ".venv", "__pycache__", "dist", "build", ".next", "target", ".cache"],
+  "models": [
+    "gemini-3.1-flash-lite-preview",
+    "gemini-2.5-flash-lite",
+    "gemini-2.5-flash"
+  ]
 }

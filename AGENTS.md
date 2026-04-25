@@ -25,6 +25,8 @@ Drop-in operating instructions for coding agents working on this project.
 - `discover-agents-md.sh` — builds/updates `agents-md-index.log` (shared file list)
 - `audit-agents-md.sh` — audits AGENTS.md files against 10 best-practice criteria
 - `inject-caveman.sh` — appends caveman-mode directive to AGENTS.md files
+- `agm-config.json` — config: project dirs, models, harness, audit settings
+- `.agm-config.local.json` — local overrides (gitignored), merged on top of defaults
 - `agents-md-index.log` — generated index (tab-separated: path, project, lines, modified)
 - `agents-audit-report-*.md` — generated audit reports
 
@@ -42,7 +44,8 @@ Drop-in operating instructions for coding agents working on this project.
 
 ## Non-negotiables
 
-1. Generated files (`agents-md-index.log`, `agents-audit-report-*.md`) must be in `.gitignore`
-2. All scripts must remain self-contained — no external config files required
-3. `discover-agents-md.sh` must produce deterministic output for the same input
-4. Consumer scripts must always refresh the index before reading it
+1. Generated files (`agents-md-index.log`, `agents-audit-report-*.md`, `.agm-config.local.json`) must be in `.gitignore`
+2. `agm-config.json` is the single config source; scripts parse it with `python3 -c "import json"` (already available, no new dependencies)
+3. Local overrides go in `.agm-config.local.json` — merged on top of defaults, never committed
+4. `discover-agents-md.sh` must produce deterministic output for the same input
+5. Consumer scripts must always refresh the index before reading it

@@ -14,6 +14,8 @@
 # Index:
 #   Re-runs discover-agents-md.sh to refresh agents-md-index.log before injecting.
 
+set -euo pipefail
+
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 INDEX_FILE="${SCRIPT_DIR}/agents-md-index.log"
 

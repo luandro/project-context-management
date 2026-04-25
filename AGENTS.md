@@ -15,6 +15,11 @@ Drop-in operating instructions for coding agents working on this project.
 - Audit (static): `./audit-agents-md.sh --static /path/to/search`
 - Audit (gemini): `./audit-agents-md.sh /path/to/search`
 - Inject caveman: `./inject-caveman.sh /path/to/search`
+- **Testing note:** When running these via a forge agent, append `&!` to disown the agent and prevent `suspended (tty output)` at exit:
+  ```bash
+  forge &!
+  ```
+  Or run the scripts directly without an agent wrapper.
 
 ### Layout
 - `discover-agents-md.sh` — builds/updates `agents-md-index.log` (shared file list)
